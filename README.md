@@ -1,1 +1,1 @@
-# os-project-beta
+# Novalumo New Operating System Project

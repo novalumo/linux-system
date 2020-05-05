@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>New OS Name Here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+<link rel="stylesheet" href="bootstrap.min.css">
+<link href="fontawesome/css/all.css" rel="stylesheet">
+<style>
+/*html{ scroll-behavior: smooth; }*/
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Noto+Sans+JP:300,400&display=swap');
+body { margin: 0 auto; font-family: 'Noto Sans JP', sans-serif !important;}
+.navbar-toggler { border: none; }
+
+.parallax {
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+}
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img-bg-01 {
+  height: 700px;
+  background-image: url('img/1.jpg');
+}
+.img-bg-02 {
+  height: 500px;
+  background-image: url('img/2.jpg');
+}
+.img-bg-03 {
+  height: 300px;
+  background-image: url('img/3.jpg');
+}
+.img-bg-04 {
+  padding: 140px 0 200px 0;
+  background-image: url('img/4.jpg');
+}
+.img-bg-05 {
+  height: 500px;
+  background-image: url('img/5.jpg');
+}
+.contents {
+  margin: auto;
+  padding: 0 8px 0 8px;
+  text-align: center;
+}
+.next-navi {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+}
+.next-navi:hover {
+  opacity: 1;
+  color: #555;
+  transition: .2s;
+}
+
+.display-4{
+  padding: 0.4em 0 0.4em 0;
+  cursor: default;
+}
+
+.downloadButton{ padding: 14px; background-color: #008fd1; color: #eee; }
+.downloadButton:hover{ transition: .4s; opacity: 0.8; text-decoration: none; color: #ccc; }
+.downloadButton-dark{ padding: 14px; background-color: #001d40; color: #eee; }
+.downloadButton-dark:hover{ transition: .4s; opacity: 0.8; text-decoration: none; color: #aaa; }
+.downloadButton-confirm{ padding: 14px; background-color: #1c1c1c; color: #eee; }
+.downloadButton-confirm:hover{ transition: .4s; opacity: 0.8; text-decoration: none; color: #aaa; }
+
+.modal-content{
+  background-color: #222;
+  color: #eee;
+}
+.modal-header{ border-bottom: 2px solid #008a2c !important; }
+.modal-footer{ border-top: 0 !important; }
+
+footer{
+  text-align: center;
+  background-color: #000;
+  padding: 8px;
+}
+footer p{
+  color: #555;
+  margin: 0 !important;
+}
+</style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow" style="background-color:rgba(40,40,70,0.5);">
+  <a class="navbar-brand" href="#">Linux</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><a class="nav-link" href="#download"><i class="fas fa-download"></i> Download</a></li>
+    <li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-github"></i> GitHub</a></li>
+  </ul>
+  <ul class="navbar-nav">
+    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-globe"></i> 日本語</a></li>
+  </ul>
+  </div>
+</nav>
+<!-- Parallax -->
+<section class="parallax parallax-bg img-bg-01" id="#">
+<div class="contents">
+  <h1 class="display-4">XXX Linux</h1>
+  <p>The Coolest Ubuntu Based Operating System in the World.</p>
+  <a class="next-navi" href="#design"><i class="fas fa-angle-down"></i></a>
+</div>
+</section>
+
+<section class="parallax parallax-bg img-bg-02" id="#">
+<div class="contents">
+  <h1 class="display-4">Design</h1>
+  <p class="text-center">Hello,World</p>
+</div>
+</section>
+
+<section class="parallax parallax-bg img-bg-03" id="#">
+<div class="contents">
+  <h1 class="display-4">Develop</h1>
+  <p class="text-center">Hello,World</p>
+</div>
+</section>
+
+<section class="parallax parallax-bg img-bg-04" id="download">
+<div class="contents">
+  <h1 class="display-4">Download</h1>
+  <h5 style="display: inline;"><a href="#stable" class="downloadButton" data-toggle="modal" data-target="#stableModal"><i class="fas fa-download"></i> Stable 1.0</a></h5>
+  <h5 style="display: inline;"><a href="#beta" class="downloadButton-dark" data-toggle="modal" data-target="#betaModal"><i class="fas fa-download"></i> Beta 1.0</a></h5>
+</div>
+</section>
+
+<div class="modal fade" id="stableModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: #333;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Stable Version</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" style="color: #eee;">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Text
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="downloadButton-confirm"><i class="fas fa-check"></i> Confirm</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="betaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: #333;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><span style="color: #f55;">Beta</span> Version</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" style="color: #eee;">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Text
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="downloadButton-confirm"><i class="fas fa-check"></i> Confirm</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="parallax parallax-bg img-bg-05">
+<div class="contents">
+  <h1 class="display-4">Donate</h1>
+</div>
+</section>
+
+<footer>
+<p>&copy 2020 Novalumo LLC</p>
+</footer>
+<!-- Script Load -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
